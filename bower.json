@@ -16,8 +16,7 @@
     "processing"
   ],
   "license": "MIT",
-  "homepage": "http://buzzfeed.com",
-  "private": true,
+  "homepage": "http://joestanco.com",
   "ignore": [
     "**/.*",
     "node_modules",
