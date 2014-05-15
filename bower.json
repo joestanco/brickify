@@ -1,0 +1,39 @@
+{
+  "name": "brickify",
+  "version": "0.0.1",
+  "authors": [
+    "Joe Stanco <joe.stanco@gmail.com>"
+  ],
+  "description": "Image manipulation utility to turn a photo into a mosaic of LEGO® bricks.",
+  "main": "dist/jquery.brickify.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "LEGO",
+    "mosaic",
+    "image",
+    "processing"
+  ],
+  "license": "MIT",
+  "homepage": "http://buzzfeed.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.0",
+    "easeljs": "*",
+    "image-processor": "*",
+    "pixastic-standalone": "*",
+    "pixastic-removenoise": "*",
+    "pixastic-mosaic": "*"
+  },
+  "devDependencies": {
+    "requirejs": "*"
+  }
+}
