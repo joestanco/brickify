@@ -249,7 +249,7 @@
 			var self = this,
 				highlight = self.imgProc.getShape();
 
-			_beginLinearGradientFill.call(self, highlight, ["#000000", "#1f1f1f"], [0, 1], [35,8,35,57]);
+			_beginLinearGradientFill.call(self, highlight, ["#333333", "#242424"], [0, 1], [35,8,35,57]);
 			_moveTo.call(self, highlight, 44,55);
 			_bezierCurveTo.call(self, highlight, [42,56,39,56,36,56]);
 			_bezierCurveTo.call(self, highlight, [33,56,30,56,28,55]);
@@ -258,7 +258,7 @@
 			_bezierCurveTo.call(self, highlight, [46,58,55,52,59,43]);
 			_bezierCurveTo.call(self, highlight, [56,49,50,53,44,55]);
 
-			_beginLinearGradientFill.call(self, highlight, ["#333333", "#000000"], [0, .5], [36,8,36,56]);
+			_beginLinearGradientFill.call(self, highlight, ["#525252", "#080808"], [0, .5], [36,8,36,56]);
 			_moveTo.call(self, highlight, 28,55);
 			_bezierCurveTo.call(self, highlight, [19,52,13,43,13,34]);
 			_lineTo.call(self, highlight, 13,33);
@@ -275,7 +275,7 @@
 			_bezierCurveTo.call(self, highlight, [11,35,11,38,12,40]);
 			_bezierCurveTo.call(self, highlight, [14,47,20,53,28,55]);
 
-			_beginLinearGradientFill.call(self, highlight, ["#060606", "#000000"], [0, 0.3714524872449], [36,56,36,10]);
+			_beginLinearGradientFill.call(self, highlight, ["#080808", "#000000"], [0, 0.3714524872449], [36,56,36,10]);
 			_moveTo.call(self, highlight, 59,34);
 			_bezierCurveTo.call(self, highlight, [59,46,49,56,36,56]);
 			_bezierCurveTo.call(self, highlight, [23,56,13,46,13,34]);
@@ -332,7 +332,7 @@
 
 					self.imgProc.scratchContext.globalCompositeOperation = 'multiply';
 					self.imgProc.scratchCanvas.addChild(new createjs.Bitmap(this));
-					self.imgProc.buildGrid(self.imgProc.stage.canvas, self.gridSize, "#d5d5d5", 0.5);
+					self.imgProc.buildGrid(self.imgProc.stage.canvas, self.gridSize, "#c0c0c0", 0.5);
 					operation = "lighter";
 					self.imgProc.$scratchImageEl.attr("src", _getHighlightDataURL.call(self));
 
@@ -343,6 +343,7 @@
 					self.imgProc.moveOnscreen(self.imgProc.$scratchImageEl);
 					self.imgProc.destroy();
 					_setProcessing(false);
+					self.$element.trigger("image:brickified");
 				}
 
 			});
@@ -355,9 +356,9 @@
 		 * Set image element to broken image icon when there's an image error
 		 */
 		_onImageError = function() {
-			self.element.width = 34;
-			self.element.height = 34;
-			self.element.src = "data:image/gif;base64,R0lGODlhIQAiAMT/AJkQZ/9rzYplzrqZ/3Zmm9vN/zplZgD9myWaZfT/zPHPmcCcZf///83Nzby8vKysrJqamomJiXh4eFRUVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAIQAiAAAF/yAjjmRpnqakrmzrrigjxfSoonNNS01e5o6gcEgkznopURGyKg5zSBLwKUEgBhSK0+GLiqbByCxhkBi0Th/DC+YiFoqq4Zwucb9KoTzyOMzRRFmCgngMTwNmc2eARBOOjxSFQxAUBgh/FBMRWxGdnZEyeUJZi1kTEltCIqBtYYKPm6kOq5JFYrCyQQyatUtinS8SWiKOEZKoWxB3BcwCBQKZu50Px4xFEszPzwQjvDZKM9ZPzc8CxMVS4Ktb2M7m59PphjMBDOJczeea1D/qAfXifMDicwIIvQAA7OkqUYxgCVb+EALUB4ufCYjzGEiUuEuTpwcWLx5jAKAkCW80ZjvZO4ZwQkdYOlRidDBI2rSQJxbOdPBImg5DqlaGAqoSXQ0itIZ284jzp1A1xZo6FTook0MaVbNO3ToiBAA7";
+			this.element.width = 34;
+			this.element.height = 34;
+			this.element.src = "data:image/gif;base64,R0lGODlhIQAiAMT/AJkQZ/9rzYplzrqZ/3Zmm9vN/zplZgD9myWaZfT/zPHPmcCcZf///83Nzby8vKysrJqamomJiXh4eFRUVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAIQAiAAAF/yAjjmRpnqakrmzrrigjxfSoonNNS01e5o6gcEgkznopURGyKg5zSBLwKUEgBhSK0+GLiqbByCxhkBi0Th/DC+YiFoqq4Zwucb9KoTzyOMzRRFmCgngMTwNmc2eARBOOjxSFQxAUBgh/FBMRWxGdnZEyeUJZi1kTEltCIqBtYYKPm6kOq5JFYrCyQQyatUtinS8SWiKOEZKoWxB3BcwCBQKZu50Px4xFEszPzwQjvDZKM9ZPzc8CxMVS4Ktb2M7m59PphjMBDOJczeea1D/qAfXifMDicwIIvQAA7OkqUYxgCVb+EALUB4ufCYjzGEiUuEuTpwcWLx5jAKAkCW80ZjvZO4ZwQkdYOlRidDBI2rSQJxbOdPBImg5DqlaGAqoSXQ0itIZ284jzp1A1xZo6FTook0MaVbNO3ToiBAA7";
 		},
 
 		/**
@@ -373,7 +374,7 @@
 		_process = function() {
 			var self = this;
 			self.imgProc.applyEffect("removenoise", self.$element, function(resultCanvas) {
-				self.imgProc.applyEffect("mosaic", resultCanvas, _paintBrickPattern.bind(self));
+				setTimeout(function(){ self.imgProc.applyEffect("mosaic", resultCanvas, _paintBrickPattern.bind(self))}, 100 );
 			});
 		};
 
